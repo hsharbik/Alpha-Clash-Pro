@@ -25,6 +25,40 @@ function play(){
     playgame();
 }
 
+function keyboardButtonPress(event){
+    // console.log("keyboard button pressed");
+    // console.log(event.key);
+    const keypressed=event.key;
+   
+    console.log('pressed key',keypressed);
+
+    const expectedkey=document.getElementById('current-alphabet').innerText;
+    const expectedalphabet=expectedkey.toLowerCase();
+    
+    
+
+    console.log('expected',expectedalphabet);
+
+    //own try please start
+
+    //check match or not
+
+    if(keypressed===expectedalphabet){
+        console.log('its ok');
+        
+    else{
+        console.log('not ok');
+    }
+
+    //own try stop
+    
+
+}
+
+
+document.addEventListener('keyup', keyboardButtonPress);
+
+
 function playgame(){
     const randomAlphabet=getalphabets();
     const currentAlphabet=document.getElementById('current-alphabet');
@@ -34,4 +68,4 @@ function playgame(){
     displayColor(randomAlphabet);
 }
 
-
+}

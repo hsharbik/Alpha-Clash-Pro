@@ -18,7 +18,7 @@ function getalphabets(){
     const alphabetsString='abcdefghijklmnopqrstuvwxyz';
     const alphabets=alphabetsString.split('');
 
-    console.log(alphabets);
+    // console.log(alphabets);
 
     //get a random number
 
