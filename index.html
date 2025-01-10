@@ -23,7 +23,7 @@
                </div>
             </section>
             <!-- play ground start -->
-            <section id="playground" class=" hidden">
+            <section id="playground" class="hidden">
                 <div class="flex  flex-col justify-center items-center pt-20 gap-24">
                     <!-- screen -->
                         <div class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC]  bg-[#FFFFFFB2]">
@@ -83,13 +83,14 @@
                          <button class="btn bg-black text-cyan-400">
                              Life
                              <img src="./images/heart.svg" alt="">
-                             <span>1</span>
+                             <span id="life">4</span>
                            </button>
                            <!-- score -->
                            <button class="btn bg-black text-cyan-400">
                              Score
                             <img src="./images/money.svg" alt="">
-                             1
+                            <span id="score">0</span>
+                            
                            </button>
                      </div>
 
@@ -98,11 +99,11 @@
                 
             </section>
             <!-- score board start -->
-            <section class="score flex justify-center items-center min-h-screen hidden">
+            <section id="score-board" class="score flex justify-center items-center min-h-screen hidden">
                 <div class="text-white text-center  space-y-4  rounded-lg p-6 bg-[#FFFFFF33]"> 
                     <h1 class="text-8xl font-bold">
                         <span>Score :</span>
-                        <span>14</span>
+                        <span >0</span>
                     </h1>
                     <button class=" btn bg-white text-black">Play Again </button>
                     <p>Practice will make you Pro</p>

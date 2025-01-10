@@ -1,4 +1,4 @@
-// console.log("connected");
+console.log("connected");
 // //create play button function that will perform screen change on home to play ground screeen
 // function play(){
 //     // console.log("play now");
@@ -30,7 +30,7 @@ function keyboardButtonPress(event){
     // console.log(event.key);
     const keypressed=event.key;
    
-    console.log('pressed key',keypressed);
+    // console.log('pressed key',keypressed);
 
     const expectedkey=document.getElementById('current-alphabet').innerText;
     const expectedalphabet=expectedkey.toLowerCase();
@@ -44,16 +44,68 @@ function keyboardButtonPress(event){
     //check match or not
 
     if(keypressed===expectedalphabet){
-        console.log('its ok');
-        
-    else{
-        console.log('not ok');
-    }
+        // console.log('its ok');
 
+            //current score display or update int screeen
+
+
+        // const currentScoreElement=document.getElementById('score');
+        // // console.log(currentScoreElement);
+        // const currentScoreText=currentScoreElement.innerText;
+        // console.log(currentScoreText);
+        // const currentScore=parseInt(currentScoreText);
+        // const newScore=currentScore+1;
+        // currentScoreElement.innerText=newScore;
+
+
+        //by doing life update with function
+
+        const currentScore=getElementValueById('score');
+        // console.log(currentScore);
+        const UpdatedScore=currentScore+1;
+        setElementValueById('score', UpdatedScore);
+
+
+        //remove key color
+
+
+        displayRemoveColor(expectedalphabet)
+
+        //game continue
+
+
+        playgame()
+        
+    }
+    else{
+        console.log("its not ok");
+        //own try life update but same
+
+
+        // const currentLIfeElement=document.getElementById('life');
+        // const currentLIfeText=currentLIfeElement.innerText;
+        // const currentLIfe=parseInt(currentLIfeText);
+        // console.log(currentLIfe);
+        // newLife=currentLIfe-1;
+        // currentLIfeElement.innerText=newLife;
+
+        //doing by function
+
+        const currentLife=getElementValueById('life');
+        const updatedLife=currentLife-1;
+        setElementValueById('life', updatedLife);
+
+        
+
+        
+      
+       
+
+    }
+}
     //own try stop
     
 
-}
 
 
 document.addEventListener('keyup', keyboardButtonPress);
@@ -68,4 +120,3 @@ function playgame(){
     displayColor(randomAlphabet);
 }
 
-}
