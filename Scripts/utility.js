@@ -22,11 +22,37 @@ function getElementValueById(elementId){
 
 }
 
+//get element text  by id
+
+function getElementText(elementId){
+ const element=document.getElementById(elementId);
+ const text=element.innerHTML;
+ return text;
+}
+
 //set element value
 
 function setElementValueById(elementId, value){
     const element=document.getElementById(elementId);
     element.innerText=value;
+}
+
+
+
+function play(){
+
+    //hide otner element 
+    // console.log('play');
+    hideElement('home');
+    hideElement('score-board');
+    showElement('playground');
+
+    //reset score and life 
+    
+    setElementValueById('life',5);
+    setElementValueById('score',0);
+
+    playgame();
 }
 
 //generate a random number and alphabet array
@@ -65,3 +91,28 @@ function displayRemoveColor(color){
     const display=document.getElementById(color);
     display.classList.remove('bg-[#FFFF00]');
     }
+
+
+    //gameover fucnton
+
+    function gameover(){
+        //hide and show element after game over
+
+        hideElement('playground')
+        showElement('score-board')
+
+        // final score upate or show on the board
+
+        const lastScore=document.getElementById('score').innerText;
+        // console.log(lastScore);
+        setElementValueById('final-score', lastScore);
+        const getText=getElementText('current-alphabet');;
+
+        displayRemoveColor(getText);
+
+
+
+    }
+
+
+

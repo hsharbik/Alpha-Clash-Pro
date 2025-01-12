@@ -1,4 +1,4 @@
-console.log("connected");
+// console.log("connected");
 // //create play button function that will perform screen change on home to play ground screeen
 // function play(){
 //     // console.log("play now");
@@ -16,19 +16,29 @@ console.log("connected");
 //evabe kora jay but jokhn ak dhoroner function barbar use hobe se jonno alada vabe akta file banano hocche good plractise tai amra akti js file baniye nibo
 
 
-function play(){
 
-    // console.log('play');
-    hideElement('home');
-    showElement('playground');
-
-    playgame();
-}
 
 function keyboardButtonPress(event){
     // console.log("keyboard button pressed");
-    // console.log(event.key);
+    
+
     const keypressed=event.key;
+    const keyup=keypressed.toUpperCase();
+    // console.log('lello',keyup);
+    // console.log(event.key);
+
+    // if(keypressed==='Escape'){
+    //     gameover();
+    // }
+
+    //eSC PRESS KORLE game over hoye jabe
+
+    if(keypressed==='CapsLock' || keypressed===keypressed.toUpperCase()){
+        alert('CAPS LOCK ON');
+    }
+    else if(keypressed==='Escape'){
+        gameover();
+    }
    
     // console.log('pressed key',keypressed);
 
@@ -81,6 +91,9 @@ function keyboardButtonPress(event){
         console.log("its not ok");
         //own try life update but same
 
+       
+
+
 
         // const currentLIfeElement=document.getElementById('life');
         // const currentLIfeText=currentLIfeElement.innerText;
@@ -94,6 +107,14 @@ function keyboardButtonPress(event){
         const currentLife=getElementValueById('life');
         const updatedLife=currentLife-1;
         setElementValueById('life', updatedLife);
+
+
+        if(updatedLife===0){
+            console.log("its over game");
+
+            gameover()
+            
+        }
 
         
 
